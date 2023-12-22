@@ -1,7 +1,8 @@
 
-.post {
+mat-card {
     /* Define styles for posts */
-    margin: 10px;
+    width: 90%;
+    margin: 10px auto;
     padding: 10px;
     border: 1px solid #ccc;
   }
