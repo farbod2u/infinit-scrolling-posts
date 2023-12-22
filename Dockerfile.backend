@@ -1,0 +1,17 @@
+FROM node:18.19.0-alpine
+
+# set working directory
+WORKDIR /home/backend
+
+# copy backend code to working directory
+COPY server.js ./server.js
+
+# install server dependencies
+RUN npm install  express
+RUN npm install  body-parser
+
+# expose the backend api port
+EXPOSE 3000
+
+# run backend script
+CMD [ "node", "server.js" ]

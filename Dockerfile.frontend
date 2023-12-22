@@ -1,0 +1,22 @@
+FROM node:18.19.0-alpine as builder
+
+# set working directory
+WORKDIR /app
+
+# copy all needed files to working directory
+COPY . /app
+
+# install dependencies
+RUN npm install
+
+# build angular app
+RUN npm run build
+
+
+FROM nginx:stable-alpine
+
+
+# exposing port 80
+EXPOSE 80
+
+COPY --from=builder  /app/dist/infinit-scrolling-posts /usr/share/nginx/html
