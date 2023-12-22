@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  posts-backend:
+    build:
+      dockerfile: Dockerfile.backend
+      context: .
+    ports:
+      - "3000:3000"
+
+  posts-frontend:
+    depends_on:
+      - posts-backend
+    restart: always
+    build:
+      dockerfile: Dockerfile.frontend
+      context: .
+    ports:
+      - "8080:80"

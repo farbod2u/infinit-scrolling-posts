@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
   page = 1;
   pageSize = 5; // Initial number of posts to load
 
-  threshold = 0.8; // Adjust as needed
+  threshold = 0.8; // load just 80% screen height 
   isLoading = false;
 
   constructor(private postService: PostService) {}
@@ -21,7 +21,9 @@ export class PostsComponent implements OnInit {
     this.loadPosts();
   }
 
+  // fetch posts data from service
   loadPosts(): void {
+    // if still not compelete data loading then just return
     if (this.isLoading) {
       return;
     }
@@ -42,6 +44,7 @@ export class PostsComponent implements OnInit {
     );
   }
 
+  // if scroll down and no more posts then lode more posts
   @HostListener('window:scroll', [])
   onScroll(): void {
     if (

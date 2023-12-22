@@ -7,8 +7,8 @@ import { Post } from './post';
   providedIn: 'root'
 })
 export class PostService {
-
-  private apiUrl = 'http://localhost:3000/posts'; // Replace with your actual backend URL
+  // backend URL
+  private apiUrl = 'http://localhost:3000/posts';
   private posts: Post[] = []
 
   constructor(private http: HttpClient) {}
