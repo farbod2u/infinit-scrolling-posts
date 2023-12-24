@@ -7,6 +7,8 @@ and return Posts.
 Posts data just are an array.
 
 ### To build and run :
+
+#### Prerequisite: You need docker and docker-compose han been installed on your OS.
 After clone project by git, do followings:
 
 ```
